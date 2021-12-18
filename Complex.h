@@ -25,8 +25,8 @@ public:
 
     float  getRad() const;
     float  getPhase() const;
-    float const getReal() const;
-    float const getImaginary();
+    float getReal() const;
+    float  getImaginary() const;
     void setReal(float real);
     void setImaginary(float imag);
 
@@ -122,5 +122,5 @@ Complex::~Complex() {
 }
 
 ostream &operator<<(ostream &os, const Complex &complex) {
-    return os;
+    return os; //TODO FIX THIS
 }

@@ -27,6 +27,23 @@ float Complex::getPhase() const {
 float Complex::getRad() const{
     return 0;
 }
+
+
+void Complex::setReal(float real) {
+    this->re = real;
+}
+
+void Complex::setImaginary(float imag) {
+    this->im = imag
+}
+
+float Complex::getReal() const {
+    return re;
+}
+float Complex::getImaginary() const {
+    return im;
+}
+
 /***********************************   Ctors    ********************************************/
 
 /**default Ctor: (0 args) : the complex zero
@@ -37,16 +54,6 @@ Complex::Complex(float real, float imag) {
     this->re =real;
     this->im = imag;
 }
-
-void Complex::setReal(float real) {
-    this->re = real;
-}
-
-float Complex::getReal() const {
-    return re;
-}
-
-
 
 
 /********************************** HELPER FUNCTIONS *********************************/
