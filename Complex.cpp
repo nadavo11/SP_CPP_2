@@ -5,6 +5,7 @@
 
 
 /*****************************      includes    ***********************************************/
+#include "cmath"
 #include "Menu.h"
 #include "Complex.h"
 #include <iostream>
@@ -20,12 +21,15 @@ using namespace std;
 /*******************************    METHODS  ***********************************************/
 
 float Complex::getPhase() const {
-    return 0;
+    if((re< 0 )&& ( im == 0) )
+        return 180;
+    float R = this->getRad();
+    return 2*atan(im/(R + re))*360/(2*M_PI);
 }
 /** INPUT : -no input
  * OUTPUT: the complex modulus (radius) -float*/
 float Complex::getRad() const{
-    return 0;
+    return sqrt((re*re)+(im*im));
 }
 
 

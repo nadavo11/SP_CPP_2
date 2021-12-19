@@ -10,7 +10,7 @@
 /*******************************    HEADERS   ***********************************************/
 #include <cmath>
 #include "iostream"
-#include "ComplexVector.h"
+#include "ComplexVec.h"
 #include "Complex.h"
 using namespace std;
 #ifndef SP_CPP_2_MENU_H
@@ -27,8 +27,8 @@ class Menu{
     double y2;
 
 /*******************************    private  methods  ***********************************************/
-    static void getClx1Clx2 (Complex &clx1,Complex &clx2, ComplexVector &V);
-    static void getClx (Complex &clx, ComplexVector &V);
+    static void getClx1Clx2 (Complex &clx1, Complex &clx2, ComplexVec &V);
+    static void getClx (Complex &clx, ComplexVec &V);
 
 /*******************************    public  methods  ***********************************************/
 public:

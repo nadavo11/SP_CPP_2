@@ -10,7 +10,7 @@
  *                                                                                                              *
  ****************************************************************************************************************/
 /***************************************     INCLUDES      ******************************************************/
-#include "ComplexVector.h"
+#include "ComplexVec.h"
 #include "Complex.h"
 #include <iostream>
 #include "vector"
@@ -22,24 +22,24 @@ using namespace std;
  * 1 arg Ctor : a real number (magnitude as in input)
  * 2 args Ctor : (real , imaginary)*/
 
-ComplexVector::ComplexVector(){
+ComplexVec::ComplexVec(){
     this->Vector = vector<Complex> ();
 }
 
-void ComplexVector::printElements() {
+void ComplexVec::printElements() {
     for(auto & i : this->Vector)
         cout<<i<<"\n";
 }
 
-void ComplexVector::insert(const Complex& x) {
+void ComplexVec::insert(const Complex& x) {
     Vector.push_back(x);
 }
-bool ComplexVector:: isValid(int i){
+bool ComplexVec:: isValid(int i){
     if (this->Vector.size() < i)
         return false;
     return true;
 }
-Complex &ComplexVector::operator[](int i) {
+Complex &ComplexVec::operator[](int i) {
 
     return this->Vector[i];
 }

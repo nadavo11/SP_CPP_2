@@ -36,7 +36,7 @@ public:
 /*******************************    OPERATORS OVERLOADING  ***********************************************/
 
     Complex  operator ~ () const{
-        Complex conj(this->im, - this->re);
+        Complex conj(this->re, 0 - this->im);
         return conj;
     }
 
