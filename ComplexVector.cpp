@@ -28,14 +28,20 @@ ComplexVector::ComplexVector(){
 
 void ComplexVector::printElements() {
     for(auto & i : this->Vector)
-        cout<<i;
+        cout<<i<<"\n";
 }
 
 void ComplexVector::insert(const Complex& x) {
     Vector.push_back(x);
 }
-
+bool ComplexVector:: isValid(int i){
+    if (this->Vector.size() < i)
+        return false;
+    return true;
+}
 Complex &ComplexVector::operator[](int i) {
+
     return this->Vector[i];
 }
+
 

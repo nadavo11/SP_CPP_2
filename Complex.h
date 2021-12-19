@@ -115,12 +115,6 @@ public:
 
 
 };
+
+
 #endif //SP_CPP_2_COMPLEX_H
-
-Complex::~Complex() {
-
-}
-
-ostream &operator<<(ostream &os, const Complex &complex) {
-    return os; //TODO FIX THIS
-}

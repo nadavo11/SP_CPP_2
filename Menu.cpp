@@ -3,7 +3,8 @@
 //
 /*****************************      includes    ***********************************************/
 #include "Menu.h"
-
+#include "Complex.h"
+#include "ComplexVector.h"
 #include <iostream>
 
 using namespace std;
@@ -26,34 +27,74 @@ Menu::Menu() {
     this->mainMenu();
 }
 void Menu:: mainMenu() {
+    ComplexVector V;
     int chs;
     int Q = 1;
+
+    float re;
+    float im;
+    int i;
+
+    Complex clx1;
+    Complex clx2;
+
     while (Q) {
         std::cout <<MAIN_MESSEGE;
 
         cin >> chs ;
         switch (chs) {
             case 1:
+                cout<<"please insert complex number:\n";
+                cout<<"real\n";
+                cin >> re;
 
+                cout<<"imaginary:\n";
+                cin >> im;
+
+                V.insert(Complex(re , im));
                 break;
+
             case 2:
-
+                V.printElements();
                 break;
+
             case 3:
+                getClx1Clx2(clx1,clx2,V);
 
+                cout<<"("<<clx1<<") + (" <<clx2<<") is "<<clx1+clx2;
                 break;
+
             case 4:
+
+                getClx1Clx2(clx1,clx2,V);
+                cout<<"("<<clx1<<") - (" <<clx2<<") is "<<clx1 - clx2;
+                break;
+
+
 
                 break;
             case 5:
 
+                getClx1Clx2(clx1,clx2,V);
+                cout<<"("<<clx1<<") / (" <<clx2<<") is "<<clx1 / clx2;
                 break;
+
             case 6:
 
+                getClx1Clx2(clx1,clx2,V);
+                cout<<"("<<clx1<<") * (" <<clx2<<") is "<<clx1 * clx2;
                 break;
+
             case 7:
-                cout<<"hey";
+                cout<<"hey";    //TODO add the polar coordinate functionality!
+
             case 8:
+                getClx(clx1,V);
+                cout<<"The conjugate of "<<clx1<< " is " <<~clx1;
+                break;
+
+
+            case 9:
                 Q = 0;
                 cout <<"Goodbye!" ;
                 break;
@@ -62,4 +103,38 @@ void Menu:: mainMenu() {
         }
     }
 }
+
+
 /********************************** HELPER FUNCTIONS *********************************/
+void Menu::getClx1Clx2(Complex &clx1, Complex &clx2, ComplexVector &V) {
+    int i;
+    cout<<"index range start from 1; i.e., 1,2,3....\n";
+    cout<<"insert index of first number:\n";
+    cin >> i;
+    while(!V.isValid(i-1)){
+        cout<<"not in range, try again\n";
+        cin >> i;
+    }
+    clx1 = V[i-1];
+
+    cout<<"insert index of second number\n:";
+    cin >> i;
+    while(!V.isValid(i-1)){
+        cout<<"not in range, try again\n";
+        cin >> i;
+    }
+    clx2 = V[i-1];
+}
+
+void Menu::getClx(Complex &clx, ComplexVector &V) {
+    int i;
+    cout<<"index range start from 1; i.e., 1,2,3....\n";
+    cout<<"insert index of complex number:\n";
+    cin >> i;
+    while(!V.isValid(i-1)){
+        cout<<"not in range, try again\n";
+        cin >> i;
+    }
+    clx = V[i-1];
+
+}

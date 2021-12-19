@@ -21,6 +21,8 @@ public:
     ComplexVector();
 
     Complex& operator [] (int) ;
+
+    bool isValid(int);
 };
 
 

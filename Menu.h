@@ -10,9 +10,12 @@
 /*******************************    HEADERS   ***********************************************/
 #include <cmath>
 #include "iostream"
+#include "ComplexVector.h"
+#include "Complex.h"
 using namespace std;
 #ifndef SP_CPP_2_MENU_H
 #define SP_CPP_2_MENU_H
+
 /********************************************************************************************/
 class Menu{
 
@@ -22,16 +25,16 @@ class Menu{
     double y1;
     double x2;
     double y2;
+
+/*******************************    private  methods  ***********************************************/
+    static void getClx1Clx2 (Complex &clx1,Complex &clx2, ComplexVector &V);
+    static void getClx (Complex &clx, ComplexVector &V);
+
 /*******************************    public  methods  ***********************************************/
 public:
 
     void mainMenu();
 
-    static void lineMenu();
-
-    void fractionMenu();
-
-    void clockMenu();
 
 /*******************************    Constructors  ***********************************************/
     Menu();

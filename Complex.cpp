@@ -34,7 +34,7 @@ void Complex::setReal(float real) {
 }
 
 void Complex::setImaginary(float imag) {
-    this->im = imag
+    this->im = imag;
 }
 
 float Complex::getReal() const {
@@ -53,6 +53,15 @@ float Complex::getImaginary() const {
 Complex::Complex(float real, float imag) {
     this->re =real;
     this->im = imag;
+}
+
+Complex::~Complex() {
+
+}
+
+ostream &operator<<(ostream &os, const Complex &clx) {
+    os << clx.re << " + " << clx.im << 'i' ;
+    return os;
 }
 
 
